@@ -1,23 +1,72 @@
 aid: arincare
+
 name: Arincare
-description: 'Arincare is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://arincare.com/img/logo-in-fbs.png
+
+description: 'Arincare provides a digital pharmacy platform for pharmacists and drugstores in Thailand, offering a suite of tools including inventory management, point‑of‑sale, e‑prescription, e‑referral, telepharmacy, and a pharma marketplace. The solution aims to streamline pharmacy operations, improve patient care, and increase sales through an integrated, free‑to‑use system.'
+
 url: https://raw.githubusercontent.com/api-evangelist/arincare/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
 - Company
-apis: []
+- Pharmacy
+- DigitalHealth
+- Thailand
+- SaaS
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/arincare-hosts.yml
+- type: Vendors
+  url: vendors/arincare-vendors.yml
+- type: Login
+  url: https://app.arincare.com/login
+- type: DomainSecurity
+  url: security/arincare-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/arincare
+  url: https://arincare.com
+- type: Documentation
+  url: https://arincare.com/index_en.html
+- type: Blog
+  url: https://blog.arincare.com
+- type: TermsOfService
+  url: https://arincare.com/terms.html
+- type: PrivacyPolicy
+  url: https://arincare.com/privacy.html
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The documentation pages are HTML rendered with JavaScript, preventing machine‑readable spec discovery.
+  evidence:
+    - url: https://arincare.com/index_en.html
+      status: 200
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 6
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
